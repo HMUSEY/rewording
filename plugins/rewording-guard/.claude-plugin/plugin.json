@@ -1,0 +1,13 @@
+{
+  "name": "rewording-guard",
+  "displayName": "Rewording Guard",
+  "version": "1.0.0",
+  "description": "Claude Code add-on for the rewording plugin. Before /rewording runs, a local script estimates the request size and blocks it if it holds a key, password, card number or IBAN. No network, no model call.",
+  "author": {
+    "name": "HMUSEY",
+    "url": "https://github.com/HMUSEY"
+  },
+  "homepage": "https://github.com/HMUSEY/rewording",
+  "repository": "https://github.com/HMUSEY/rewording",
+  "license": "MIT"
+}

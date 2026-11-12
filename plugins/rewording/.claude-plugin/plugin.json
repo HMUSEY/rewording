@@ -1,0 +1,13 @@
+{
+  "name": "rewording",
+  "displayName": "Rewording",
+  "version": "1.3.0",
+  "description": "Turns a raw request in Arabic or English into a ready prompt for the right Claude surface, with model, effort and toggle advice. Runs only when you call it from the / menu.",
+  "author": {
+    "name": "HMUSEY",
+    "url": "https://github.com/HMUSEY"
+  },
+  "homepage": "https://github.com/HMUSEY/rewording",
+  "repository": "https://github.com/HMUSEY/rewording",
+  "license": "MIT"
+}

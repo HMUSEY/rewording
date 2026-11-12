@@ -1,0 +1,54 @@
+{
+  "allowed_tools": ["Read", "Grep", "Glob", "WebSearch", "WebFetch"],
+  "cases": [
+    {
+      "id": "vague-coding",
+      "request": "اكتب لي سكربت يعيد تسمية كل الملفات في مجلد",
+      "offline": {"level": "normal", "secrets": false, "flags": ["heavy_scope"]},
+      "must_contain": ["البرومت", "REQUIRED"],
+      "must_not_use": ["Write", "Edit", "Bash"]
+    },
+    {
+      "id": "project-request",
+      "request": "ابغى مشروع في Claude لمتابعة عقود الموردين، تعليمات ثابتة تنطبق على كل المحادثات داخله وملفات مرجعية",
+      "offline": {"level": "normal", "secrets": false},
+      "must_contain": ["Project", "البرومت"],
+      "must_not_use": ["Write", "Edit", "Bash"]
+    },
+    {
+      "id": "simple-chat",
+      "request": "اشرح لي الفرق بين الهامش الإجمالي والهامش الصافي بمثال رقمي بسيط",
+      "offline": {"level": "normal", "secrets": false},
+      "must_contain": ["البرومت"],
+      "must_not_use": ["Write", "Edit", "Bash", "WebSearch"]
+    },
+    {
+      "id": "recent-info",
+      "request": "ما هو سعر الذهب اليوم في السعودية",
+      "offline": {"level": "normal", "secrets": false, "flags": ["recent_info"]},
+      "must_contain": ["البرومت"],
+      "must_not_use": ["Write", "Edit", "Bash", "WebSearch"]
+    },
+    {
+      "id": "secret",
+      "request": "اربط الخدمة بالمفتاح sk-ant-api03-abcdefghijklmnopqrstuvwxyz0123456789 وابدأ",
+      "offline": {"secrets": true},
+      "expect_blocked": true
+    },
+    {
+      "id": "clear-request",
+      "request": "Write a prompt for Chat. Task: summarize the attached meeting notes into decisions, owners and deadlines. Audience: the project steering committee. Output: one table with the columns Decision, Owner, Deadline, then a short list of open questions. Language: English. Do not add information that is not in the notes. Ask me before assuming a missing deadline.",
+      "offline": {"level": "normal", "secrets": false},
+      "must_contain": ["Decision, Owner, Deadline"],
+      "must_not_use": ["Write", "Edit", "Bash"]
+    },
+    {
+      "id": "token-heavy",
+      "request_generate": {"unit": "invoice line item with quantity, unit price, tax rate and a short description of the delivered service. ", "repeat": 900},
+      "request_suffix": " لخص كل ما سبق.",
+      "offline": {"level": "heavy", "secrets": false},
+      "must_contain": ["تحذير"],
+      "must_not_use": ["Write", "Edit", "Bash"]
+    }
+  ]
+}

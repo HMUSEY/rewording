@@ -1,0 +1,20 @@
+{
+  "name": "hmusey",
+  "description": "HMUSEY's personal Claude plugins.",
+  "owner": {
+    "name": "HMUSEY",
+    "url": "https://github.com/HMUSEY"
+  },
+  "plugins": [
+    {
+      "name": "rewording",
+      "source": "./plugins/rewording",
+      "description": "Turns a raw request into a ready prompt for the right Claude surface."
+    },
+    {
+      "name": "rewording-guard",
+      "source": "./plugins/rewording-guard",
+      "description": "Claude Code only. Local size and secret check that runs before /rewording."
+    }
+  ]
+}
